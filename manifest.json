@@ -1,0 +1,37 @@
+{
+  "src/assets/bgImage.jpg": {
+    "file": "img-8421f225.jpg",
+    "src": "src/assets/bgImage.jpg"
+  },
+  "src/assets/myImage.jpg": {
+    "file": "img-67713269.jpg",
+    "src": "src/assets/myImage.jpg"
+  },
+  "src/components/CenterView.css": {
+    "file": "css-ec27f84f.css",
+    "src": "src/components/CenterView.css"
+  },
+  "src/components/CenterView.vue": {
+    "file": "build-fb88ead6.js",
+    "src": "src/components/CenterView.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.js"
+    ],
+    "css": [
+      "css-ec27f84f.css"
+    ],
+    "assets": [
+      "img-67713269.jpg",
+      "img-8421f225.jpg"
+    ]
+  },
+  "src/main.js": {
+    "file": "main-6e553bf7.js",
+    "src": "src/main.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/components/CenterView.vue"
+    ]
+  }
+}
