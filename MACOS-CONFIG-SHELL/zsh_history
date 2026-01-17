@@ -1,0 +1,17 @@
+ wakeonlan 7C:10:C9:1F:E0:31
+ brew update; brew upgrade; brew outdated; brew cleanup
+ ssh root@api-v1-server.autoketing.org
+ ssh root@api-v2-server.autoketing.org
+ ssh root@api-v3-server.autoketing.org
+ npx prettier -w .
+ git remote add origin ssh://root@iot.zii.ovh:55599/srv/projects/move-iframe.git
+ git config --global user.name "manhbv"
+ git push --set-upstream origin main
+ git config --global init.defaultBranch main
+ git config user.name
+ git config user.email
+ ssh -p 55599 root@iot.zii.ovh
+ ssh root@server.autoketing.org
+ ssh root@server.shopone.dev
+ npm run prettier
+ telnet 172.17.0.1 16379
