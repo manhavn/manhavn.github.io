@@ -72,6 +72,7 @@
 </p>
 
 <p align="center">
+  <a href="https://manhavn.github.io">Website</a> •
   <a href="https://github.com/manhavn?tab=repositories">Repos</a> •
   <a href="https://crates.io/users/manhavn">Crates</a> •
   <a href="https://orcid.org/0009-0001-7710-4348">ORCID</a> •
@@ -90,20 +91,14 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=manhavn&radius=0&bg_color=0000&color=58a6ff&line=58a6ff&point=ffffff&area=true&area_color=1f6feb" />
 </p>
 
-# manhavn.github.io
-
-- [manhavn](/manhavn)
+---
 
 - [tcptotcp](/tcptotcp)
 - [tcptotcpgo](/tcptotcpgo)
-
 - [blockbucket](/blockbucket)
 - [blockbucketgo](/blockbucketgo)
-
 - [quick-deploy](/quick-deploy)
-
 - [otp2fa](/otp2fa)
-
 - [vite-vue-embed](/vite-vue-embed)
 - [MACOS-CONFIG-SHELL](/MACOS-CONFIG-SHELL)
 - [ASUS-B560-PRIME-PLUS-HACKINTOSH-SEQUOIA](ASUS-B560-PRIME-PLUS-HACKINTOSH-SEQUOIA)
