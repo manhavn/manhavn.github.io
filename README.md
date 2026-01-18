@@ -74,9 +74,7 @@
 <p align="center">
   <a href="https://manhavn.github.io">Website</a> •
   <a href="https://github.com/manhavn?tab=repositories">Repos</a> •
-  <a href="https://crates.io/users/manhavn">Crates</a> •
-  <a href="https://orcid.org/0009-0001-7710-4348">ORCID</a> •
-  <a href="https://gravatar.com/manhavn">Gravatar</a>
+  <a href="https://crates.io/users/manhavn">Crates</a>
 </p>
 
 <!-- 
