@@ -1,5 +1,4 @@
-const origin = new URL(document.currentScript.src)?.origin;
-console.log(origin);
+const currentScriptSrc = new URL(document.currentScript.src);
 
 (async () => {
   if (top === window) return;
@@ -29,12 +28,16 @@ console.log(origin);
     }
   }
   list.sort((a, b) => a - b);
-  const newListStr = JSON.stringify(list);
-  document.cookie = `${listOnApp}=${newListStr}; Path=/; SameSite=None; Secure`;
+  const newListStr = btoa(JSON.stringify(list));
+
+  const newCookie = `${listOnApp}=${newListStr}; Path=/; SameSite=None; Secure`;
+  document.cookie = newCookie;
 
   const oldListStr = oldList?.value;
   if (oldListStr === newListStr) {
-    console.log(shop, list, origin);
+    const searchParams = currentScriptSrc.searchParams;
+    const pingUrl = `${atob(searchParams.get("p"))}?shop=${searchParams.get("shop")}`;
+    await fetch(pingUrl);
+    document.cookie = newCookie + "; Max-Age=0";
   }
 })();
-
