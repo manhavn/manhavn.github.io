@@ -54,21 +54,22 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Networking-2E3440?logo=cloudflare&logoColor=white" />
-  <img src="https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white" />
-  <img src="https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Github-4078C0?logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitLab-E24329?logo=gitlab&logoColor=white" />
-  <img src="https://img.shields.io/badge/Shopify-64943E?logo=shopify&logoColor=white" />
-</p>
-
-<p align="center">
   <!-- badges -->
   <img src="https://img.shields.io/badge/MySQL-00758f?logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/MongoDB-3FA037?logo=mongodb&logoColor=white" />
   <img src="https://img.shields.io/badge/InfluxDB-0046FE?logo=influxdb&logoColor=white" />
   <img src="https://img.shields.io/badge/DuckDB-7D66FF?logo=duckdb&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQLite-044a64?logo=sqlite&logoColor=white" />
   <img src="https://img.shields.io/badge/Firebase-FFA611?logo=firebase&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Network-2E3440?logo=cloudflare&logoColor=white" />
+  <img src="https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white" />
+  <img src="https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Github-4078C0?logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitLab-E24329?logo=gitlab&logoColor=white" />
+  <img src="https://img.shields.io/badge/Shopify-64943E?logo=shopify&logoColor=white" />
 </p>
 
 <p align="center">
