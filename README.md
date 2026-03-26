@@ -78,7 +78,7 @@
   <a href="https://crates.io/users/manhavn">Crates</a>
 </p>
 
-<!-- 
+<!--
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 <p align="center">
   <img src="https://raw.githubusercontent.com/manhavn/manhavn/refs/heads/main/go_vs_rust_1s.gif" />
@@ -102,3 +102,5 @@
 - [MACOS-CONFIG-SHELL](/MACOS-CONFIG-SHELL)
 - [ASUS-B560-PRIME-PLUS-HACKINTOSH-SEQUOIA](ASUS-B560-PRIME-PLUS-HACKINTOSH-SEQUOIA)
 - [DELL-Precision-5540-TAHOE-OC-1.0.6](/DELL-Precision-5540-TAHOE-OC-1.0.6)
+- [SHELL-SCRIPTS](/SHELL-SCRIPTS)
+- [linux-fstab-feature](/linux-fstab-feature)

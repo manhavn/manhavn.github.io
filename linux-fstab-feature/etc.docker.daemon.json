@@ -1,0 +1,6 @@
+{
+  "features": {
+    "containerd-snapshotter": true
+  },
+  "insecure-registries": ["registry.mydomain.com:5000"]
+}

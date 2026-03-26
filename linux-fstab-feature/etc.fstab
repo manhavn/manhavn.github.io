@@ -1,0 +1,41 @@
+# mount partition
+LABEL=feature /feature ext4 defaults 0 1
+LABEL=Desktop /home/dev/Desktop ext4 defaults 0 1
+
+# /feature/etc.fstab
+/feature/snap /snap none bind 0 0
+/feature/var.lib.snapd /var/lib/snapd none bind 0 0
+/feature/var.lib.flatpak /var/lib/flatpak none bind 0 0
+
+/feature/etc.docker.daemon.json /etc/docker/daemon.json none bind 0 0
+
+/feature/usr.local.bin /usr/local/bin none bind 0 0
+/feature/usr.local.share.applications /usr/local/share/applications none bind 0 0
+/feature/usr.local.lib.docker.cli-plugins /usr/local/lib/docker/cli-plugins none bind 0 0
+
+# /feature/opt.zen /opt/zen none bind 0 0
+# /feature/opt.podman-desktop /opt/podman-desktop none bind 0 0
+
+/feature/userdata.Android /home/dev/Android none bind 0 0
+/feature/userdata.cargo /home/dev/.cargo none bind 0 0
+/feature/userdata.rustup /home/dev/.rustup none bind 0 0
+/feature/userdata.snap /home/dev/snap none bind 0 0
+/feature/userdata.local.share.flatpak /home/dev/.local/share/flatpak none bind 0 0
+/feature/userdata.var.app /home/dev/.var/app none bind 0 0
+# /feature/userdata.zen /home/dev/.zen none bind 0 0
+/feature/userdata.ssh /home/dev/.ssh none bind 0 0
+# /feature/userdata.vscode /home/dev/.vscode none bind 0 0
+/feature/userdata.nvm /home/dev/.nvm none bind 0 0
+/feature/userdata.local.share.containers /home/dev/.local/share/containers none bind 0 0
+# /feature/userdata.config.sublime-text /home/dev/.config/sublime-text none bind 0 0
+/feature/userdata.docker /home/dev/.docker none bind 0 0
+# /feature/userdata.config.MongoDB.Compass /home/dev/.config/MongoDB\040Compass none bind 0 0
+# /feature/userdata.config.google-chrome /home/dev/.config/google-chrome none bind 0 0
+/feature/userdata.config.ngrok /home/dev/.config/ngrok none bind 0 0
+/feature/userdata.local.share.keyrings /home/dev/.local/share/keyrings none bind 0 0
+# /feature/userdata.config.dconf /home/dev/.config/dconf none bind 0 0
+/feature/userdata.local.share.gnome-shell /home/dev/.local/share/gnome-shell none bind 0 0
+
+/feature/userdata.bash.history /home/dev/.bash_history none bind 0 0
+/feature/userdata.bash.aliases /home/dev/.bash_aliases none bind 0 0
+

@@ -1,0 +1,15 @@
+# linux-fstab-feature
+
+- [bash_history](./bash_history)
+- [bashrc](./bashrc)
+- [change-permission.sh](./change-permission.sh)
+- [etc.docker.daemon.json](./etc.docker.daemon.json)
+- [etc.fstab](./etc.fstab)
+- [feature.png](./feature.png)
+- [gnome-extensions.png](./gnome-extensions.png)
+- [NEW-DOCKER-REPO.sh](./NEW-DOCKER-REPO.sh)
+- [profile](./profile)
+- [tar-czvf.png](./tar-czvf.png)
+- [userdata.bash.aliases](./userdata.bash.aliases)
+- [userdata.bash.history](./userdata.bash.history)
+- [userdata.local.share.gnome-shell.tar.xz](./userdata.local.share.gnome-shell.tar.xz)
