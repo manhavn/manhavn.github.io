@@ -100,6 +100,7 @@
 - [otp2fa](/otp2fa)
 - [vite-vue-embed](/vite-vue-embed)
 - [dashboard-react-app](/dashboard-react-app)
+- [dashboard-vue-app](/dashboard-vue-app)
 - [MACOS-CONFIG-SHELL](/MACOS-CONFIG-SHELL)
 - [ASUS-B560-PRIME-PLUS-HACKINTOSH-SEQUOIA](ASUS-B560-PRIME-PLUS-HACKINTOSH-SEQUOIA)
 - [DELL-Precision-5540-TAHOE-OC-1.0.6](/DELL-Precision-5540-TAHOE-OC-1.0.6)
