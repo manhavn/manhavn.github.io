@@ -38,7 +38,17 @@ const files = "http://server.api:8080";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), basicSsl()],
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) =>
+            ["ui-", "s-"].some((prefix) => tag.startsWith(prefix)),
+        },
+      },
+    }),
+    basicSsl(),
+  ],
   resolve: {
     tsconfigPaths: true,
     alias: {
@@ -74,21 +84,120 @@ bun i -D @vitejs/plugin-basic-ssl
   ...
   <meta name="shopify-api-key" content="fbc72a9f43e4c56cd441b8011462cf6b" />
   <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
-  <script src="https://cdn.shopify.com/shopifycloud/polaris.js"></script>
 </head>
 ```
 
-5 - Commit app config
+5 - Edit: `src/App.vue`
+
+```vue
+<script setup lang="ts">
+import HelloWorld from "@components/HelloWorld.vue";
+</script>
+
+<template>
+  <HelloWorld />
+</template>
+```
+
+6 - Add Config ui-save-bar: `src/components/HelloWorld.vue`
+
+```vue
+<script setup lang="ts">
+import { ref } from "vue";
+import viteLogo from "@assets/vite.svg";
+import heroImg from "@assets/hero.png";
+import vueLogo from "@assets/vue.svg";
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const shopify = (window as any).shopify || {
+  toast: {
+    show: () => {},
+    hide: () => {},
+  },
+};
+
+const inputValue = ref("");
+
+const mySaveBar = ref();
+const hasUnsavedChanges = ref<boolean>(false);
+
+const handleFieldInput = (e: any) => {
+  inputValue.value = e.currentTarget?.value || "";
+
+  shopify.toast.hide();
+  if (!hasUnsavedChanges.value) {
+    hasUnsavedChanges.value = true;
+    mySaveBar.value.show();
+  }
+};
+
+const handleDiscard = (e: Event) => {
+  e.preventDefault();
+  inputValue.value = "";
+
+  hasUnsavedChanges.value = false;
+  mySaveBar.value.hide();
+  shopify.toast.hide();
+};
+
+const handleSave = async (e: Event) => {
+  e.preventDefault();
+  // Save to your backend
+  await sleep(100);
+  shopify.toast.show("Successfully saved!");
+
+  hasUnsavedChanges.value = false;
+  mySaveBar.value.hide();
+};
+</script>
+
+<template>
+  <ui-save-bar ref="mySaveBar">
+    <button variant="primary" v-on:click="handleSave"></button>
+    <button v-on:click="handleDiscard"></button>
+  </ui-save-bar>
+
+  <div class="ticks"></div>
+
+  <section id="center">
+    <div class="hero">
+      <img :src="heroImg" class="base" width="170" height="179" alt="" />
+      <img :src="vueLogo" class="framework" alt="Vue logo" />
+      <img :src="viteLogo" class="vite" alt="Vite logo" />
+    </div>
+
+    <form v-on:submit="handleSave" v-on:reset="handleDiscard">
+      <div class="hero">
+        <label>
+          Name:
+          <input :value="inputValue" v-on:input="handleFieldInput" />
+        </label>
+      </div>
+
+      <div class="hero">
+        <button type="submit" class="counter">Submit</button>
+        <button type="reset" class="counter">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <div class="ticks"></div>
+</template>
+```
+
+7 - Commit app config
 
 ```shell
 git config user.name myapp
 git config user.email myapp@shopify.app
 
 git add .
-git commit -m "Add config ssl, shopify-api-key, app-bridge, polaris"
+git commit -m "Add config ssl, shopify-api-key, app-bridge, ui-save-bar"
 ```
 
-6 - Run `bun dev`:
+8 - Run `bun dev`:
 
 - Open url from browser: https://localhost:5173/?shop=my-store.myshopify.com
 - And accept: Advanced > Proceed to localhost (unsafe)
+
+---
