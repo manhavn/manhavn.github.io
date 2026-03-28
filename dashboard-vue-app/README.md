@@ -127,7 +127,7 @@ const handleFieldInput = (e: any) => {
   shopify.toast.hide();
   if (!hasUnsavedChanges.value) {
     hasUnsavedChanges.value = true;
-    mySaveBar.value.show();
+    mySaveBar.value.show?.();
   }
 };
 
@@ -136,7 +136,7 @@ const handleDiscard = (e: Event) => {
   inputValue.value = "";
 
   hasUnsavedChanges.value = false;
-  mySaveBar.value.hide();
+  mySaveBar.value.hide?.();
   shopify.toast.hide();
 };
 
@@ -147,7 +147,7 @@ const handleSave = async (e: Event) => {
   shopify.toast.show("Successfully saved!");
 
   hasUnsavedChanges.value = false;
-  mySaveBar.value.hide();
+  mySaveBar.value.hide?.();
 };
 </script>
 
