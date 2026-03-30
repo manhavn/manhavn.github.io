@@ -37,6 +37,7 @@
   <img src="https://img.shields.io/badge/ReactJS-58C4DC?logo=react&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-41D1FF?logo=vite&logoColor=white" />
   <img src="https://img.shields.io/badge/VueJS-42b883?logo=vue.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Svelte-FF3E00?logo=svelte&logoColor=white" />
   <img src="https://img.shields.io/badge/NodeJS-336633?logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/HTML5-F06529?logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS-6667AB?logo=css&logoColor=white" />
@@ -78,7 +79,7 @@
   <a href="https://crates.io/users/manhavn">Crates</a>
 </p>
 
-<!--
+<!-- 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 <p align="center">
   <img src="https://raw.githubusercontent.com/manhavn/manhavn/refs/heads/main/go_vs_rust_1s.gif" />
