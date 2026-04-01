@@ -4,7 +4,8 @@ cd "$(dirname "$0")"
  sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean
  sudo snap refresh; sudo snap list --all | awk '/disabled/{print $1, $3}' | while read snap revision; do echo sudo snap remove "$snap" --revision="$revision"; sudo snap remove "$snap" --revision="$revision"; done
 
- sudo apt install docker.io podman git curl ibus-unikey flatpak gnome-software-plugin-flatpak gparted gedit gnome-shell-extension-manager gcc libssl-dev pkg-config -y
+ sudo apt install docker.io podman git curl ibus-unikey flatpak gparted gedit micro gcc libssl-dev pkg-config -y
+ # sudo apt install gnome-software-plugin-flatpak gnome-shell-extension-manager -y
  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
  # sudo systemctl disable docker.socket docker.service containerd.service
  sudo groupadd docker
@@ -12,7 +13,9 @@ cd "$(dirname "$0")"
  npm i -g npm bun yarn serve @shopify/cli bestzip
  echo "Gnome Shell Extensions: Clipboard Indicator, Compact Top Bar, Gradient Top Bar"
 
- # flatpak install io.podman_desktop.PodmanDesktop org.virt_manager.virt-manager org.gnome.Epiphany org.adishatz.Screenshot com.cloudchewie.cloudotp io.gitlab.adhami3310.Impression org.kde.dolphin com.github.tchx84.Flatseal com.belmoussaoui.Authenticator com.yubico.yubioath org.kde.krdc org.gnome.Totem nl.hjdskes.gcolor3 app.drey.Warp org.kde.falkon com.jgraph.drawio.desktop org.openshot.OpenShot sh.ppy.osu org.raspberrypi.rpi-imager dev.zed.Zed io.github.shiftey.Desktop org.filezillaproject.Filezilla org.flameshot.Flameshot com.getpostman.Postman io.dbeaver.DBeaverCommunity net.waterfox.waterfox org.kde.haruna org.remmina.Remmina us.zoom.Zoom org.sigxcpu.Livi org.gnu.emacs org.kde.kate org.telegram.desktop org.kde.krita org.kde.konsole org.fedoraproject.MediaWriter org.kde.kdenlive org.ksnip.ksnip org.gimp.GIMP org.inkscape.Inkscape com.sublimemerge.App com.sublimehq.SublimeText com.visualstudio.code org.mozilla.firefox com.google.Chrome app.zen_browser.zen com.jetbrains.DataGrip com.mongodb.Compass org.onlyoffice.desktopeditors com.google.AndroidStudio com.jetbrains.IntelliJ-IDEA-Ultimate com.jetbrains.RustRover com.jetbrains.WebStorm com.jetbrains.GoLand
+ # flatpak install io.podman_desktop.PodmanDesktop org.virt_manager.virt-manager org.gnome.Epiphany org.adishatz.Screenshot com.cloudchewie.cloudotp io.gitlab.adhami3310.Impression com.github.tchx84.Flatseal com.belmoussaoui.Authenticator com.yubico.yubioath org.kde.krdc org.gnome.Totem nl.hjdskes.gcolor3 app.drey.Warp org.kde.falkon com.jgraph.drawio.desktop org.openshot.OpenShot sh.ppy.osu org.raspberrypi.rpi-imager dev.zed.Zed io.github.shiftey.Desktop org.filezillaproject.Filezilla org.flameshot.Flameshot com.getpostman.Postman io.dbeaver.DBeaverCommunity net.waterfox.waterfox org.kde.haruna org.remmina.Remmina us.zoom.Zoom org.sigxcpu.Livi org.gnu.emacs org.kde.kate org.telegram.desktop org.kde.krita org.fedoraproject.MediaWriter org.kde.kdenlive org.ksnip.ksnip org.gimp.GIMP org.inkscape.Inkscape com.sublimemerge.App com.sublimehq.SublimeText com.visualstudio.code org.mozilla.firefox com.google.Chrome app.zen_browser.zen com.jetbrains.DataGrip com.mongodb.Compass org.onlyoffice.desktopeditors com.google.AndroidStudio com.jetbrains.IntelliJ-IDEA-Ultimate com.jetbrains.RustRover com.jetbrains.WebStorm com.jetbrains.GoLand
+
+ # flatpak install com.microsoft.Edge io.github.zyedidia.micro io.podman_desktop.PodmanDesktop org.gnome.Epiphany io.gitlab.adhami3310.Impression org.gnome.Totem nl.hjdskes.gcolor3 app.drey.Warp com.jgraph.drawio.desktop org.openshot.OpenShot sh.ppy.osu org.raspberrypi.rpi-imager org.filezillaproject.Filezilla com.getpostman.Postman io.dbeaver.DBeaverCommunity net.waterfox.waterfox org.kde.haruna org.remmina.Remmina us.zoom.Zoom org.sigxcpu.Livi org.telegram.desktop org.kde.krita org.fedoraproject.MediaWriter org.kde.kdenlive org.gimp.GIMP org.inkscape.Inkscape com.sublimemerge.App com.sublimehq.SublimeText com.visualstudio.code org.mozilla.firefox com.google.Chrome app.zen_browser.zen com.jetbrains.DataGrip com.mongodb.Compass org.onlyoffice.desktopeditors com.google.AndroidStudio com.jetbrains.IntelliJ-IDEA-Ultimate com.jetbrains.RustRover com.jetbrains.WebStorm com.jetbrains.GoLand
 
  # rustup
  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -41,4 +44,3 @@ cd "$(dirname "$0")"
 
  # sudo snap disable 
  # sudo snap enable 
-
