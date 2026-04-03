@@ -3,12 +3,15 @@
 - Config: `dev.shopify.com` > `dashboard` > `Apps` > `Versions` > `Create version`
 
 - App URL: `http://localhost:5173`
+
 ![alt text](urls-app-url.png)
 
 - Access Scopes: `write_products,...`
+
 ![alt text](access-scopes.png)
 
 - `Active version`
+
 ![alt text](image.png)
 
 - Config UI: `index.html` replace `content="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"` ( from `dev.shopify.com` > `dashboard` > `Apps` > `Settings` > `Client ID` )
