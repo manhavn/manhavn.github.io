@@ -8,7 +8,7 @@
 - Access Scopes: `write_products,...`
 ![alt text](access-scopes.png)
 
-- Active version
+- `Active version`
 ![alt text](image.png)
 
 - Config UI: `index.html` replace `content="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"` ( from `dev.shopify.com` > `dashboard` > `Apps` > `Settings` > `Client ID` )
