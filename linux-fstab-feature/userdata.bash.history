@@ -1,4 +1,3 @@
  sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean
- flatpak update -y
+ flatpak update -y; flatpak uninstall --unused --delete-data -y; flatpak uninstall --unused; rm -rf ~/.cache/flatpak; rm -rf ~/.var/app/*/cache/*
  sudo snap refresh; sudo snap list --all | awk '/disabled/{print $1, $3}' | while read snap revision; do echo sudo snap remove "$snap" --revision="$revision"; sudo snap remove "$snap" --revision="$revision"; done
-
