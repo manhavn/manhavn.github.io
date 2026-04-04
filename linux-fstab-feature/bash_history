@@ -55,6 +55,9 @@ EOFALIASES
  nvm i 18
  nvm i 16
  nvm i 14
+ 
+ nvm use 22
+ npm i -g bun yarn serve @shopify/cli bestzip
 
  # NodeJS fnm
  curl -o- https://fnm.vercel.app/install | bash
@@ -65,6 +68,8 @@ EOFALIASES
  fnm i 18
  fnm i 16
  fnm i 14
+ 
+ fnm use 22
  npm i -g bun yarn serve @shopify/cli bestzip
 
  # bash autosuggestions
