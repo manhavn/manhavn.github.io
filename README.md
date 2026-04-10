@@ -37,6 +37,7 @@
   <img src="https://img.shields.io/badge/ReactJS-58C4DC?logo=react&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-41D1FF?logo=vite&logoColor=white" />
   <img src="https://img.shields.io/badge/VueJS-42b883?logo=vue.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Svelte-FF3E00?logo=svelte&logoColor=white" />
   <img src="https://img.shields.io/badge/NodeJS-336633?logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/HTML5-F06529?logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS-6667AB?logo=css&logoColor=white" />
@@ -99,6 +100,13 @@
 - [quick-deploy](/quick-deploy)
 - [otp2fa](/otp2fa)
 - [vite-vue-embed](/vite-vue-embed)
+- [dashboard-react-app](/dashboard-react-app)
+- [dashboard-vue-app](/dashboard-vue-app)
 - [MACOS-CONFIG-SHELL](/MACOS-CONFIG-SHELL)
 - [ASUS-B560-PRIME-PLUS-HACKINTOSH-SEQUOIA](ASUS-B560-PRIME-PLUS-HACKINTOSH-SEQUOIA)
 - [DELL-Precision-5540-TAHOE-OC-1.0.6](/DELL-Precision-5540-TAHOE-OC-1.0.6)
+- [SHELL-SCRIPTS](/SHELL-SCRIPTS)
+- [linux-fstab-feature](/linux-fstab-feature)
+- [get-shopify-shop-app-access-token](/get-shopify-shop-app-access-token)
+
+---
