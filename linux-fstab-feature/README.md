@@ -14,4 +14,6 @@
 - [setup_new_user.sh](./setup_new_user.sh)
 - [start-bind-mounts.sh](./start-bind-mounts.sh)
 - [tar-czvf.png](./tar-czvf.png)
+- [git-mount-iso.sh](./git-mount-iso.sh)
+- [git-setup-bare-nas-ssh-restore.sh](./git-setup-bare-nas-ssh-restore.sh)
 - [userdata.local.share.gnome-shell.tar.xz](./userdata.local.share.gnome-shell.tar.xz)
