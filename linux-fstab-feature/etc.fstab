@@ -1,0 +1,4 @@
+# mount partition
+LABEL=feature /feature ext4 defaults 0 1
+LABEL=desktop /desktop ext4 defaults 0 1
+
