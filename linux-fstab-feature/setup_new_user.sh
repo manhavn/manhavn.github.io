@@ -22,7 +22,29 @@ cd "$(dirname "$0")"
  sudo snap refresh; sudo snap list --all | awk '/disabled/{print $1, $3}' | while read snap revision; do echo sudo snap remove "$snap" --revision="$revision"; sudo snap remove "$snap" --revision="$revision"; done
  sudo snap install go --classic
 
- sudo apt install docker.io podman git curl ibus-unikey flatpak gparted gedit micro gcc libssl-dev pkg-config -y
+ # DOCKER NEW BEGIN
+ sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1) -y
+
+ sudo apt update
+ sudo apt install ca-certificates curl -y
+ sudo install -m 0755 -d /etc/apt/keyrings
+ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+ sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+ sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+ sudo apt update
+ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+ # DOCKER NEW END
+
+ sudo apt install podman git curl ibus-unikey flatpak gparted gedit micro gcc libssl-dev pkg-config -y
  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
  sudo ln -s /var/lib/flatpak/exports/share/applications /usr/local/share/
  # sudo systemctl disable docker.socket docker.service containerd.service
@@ -60,10 +82,15 @@ if [ -d "\$FNM_PATH" ]; then
   export PATH="\$FNM_PATH:\$PATH"
   eval "\$(fnm env --shell bash)"
 fi
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 EOFALIASES
 
  sudo chmod 644 ~/.bash_history ~/.bash_aliases
  sudo chown root:root ~/.bash_history ~/.bash_aliases
+
+ cp "$HOME/.bashrc" "$HOME/.bashrc.old"
 
 # sudo mkdir -p ~/.config/systemd/user
 # # ~/.config/systemd/user/bind-mounts.service
@@ -85,33 +112,46 @@ EOFALIASES
 # sudo chown $USER:$USER ~/.config/systemd/user/bind-mounts.service
 # # systemctl --user enable bind-mounts.service
 
+ curl -s "https://get.sdkman.io" | bash
+ source "$HOME/.bash_aliases"
+ source "$HOME/.bashrc"
+ source "$HOME/.sdkman/bin/sdkman-init.sh"
+ spring --version
+ sdk install java 26.0.1-open
+ sdk install springboot
+
  # NodeJS nvm
  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+ source "$HOME/.bash_aliases"
+ source "$HOME/.bashrc"
  \. "$HOME/.nvm/nvm.sh"
- source ~/.bashrc
  nvm i 22
  nvm i 24
  nvm i 20
  nvm i 18
  nvm i 16
  nvm i 14
- 
+
  nvm use 22
- npm i -g bun yarn serve @shopify/cli bestzip
+ npm i -g bun yarn serve bestzip
+ echo 'npm i -g @shopify/cli'
 
  # NodeJS fnm
  curl -o- https://fnm.vercel.app/install | bash
- source ~/.bashrc
+ source "$HOME/.bash_aliases"
+ source "$HOME/.bashrc"
  fnm i 22
  fnm i 24
  fnm i 20
  fnm i 18
  fnm i 16
  fnm i 14
- 
- fnm use 22
- npm i -g bun yarn serve @shopify/cli bestzip
 
+ fnm use 22
+ npm i -g bun yarn serve bestzip
+ echo 'npm i -g @shopify/cli'
+
+ cp "$HOME/.bashrc.old" "$HOME/.bashrc"
  # bash autosuggestions
  bash /feature/install-bash-autosuggestions.sh
 
@@ -120,7 +160,8 @@ EOFALIASES
  # rustup
  sudo apt install gcc libssl-dev pkg-config -y
  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
- source ~/.bashrc
+ source "$HOME/.bash_aliases"
+ source "$HOME/.bashrc"
  cargo install cargo-generate cargo-watch trunk wasm-pack
  rustup update
  rustup toolchain install stable
@@ -147,4 +188,3 @@ EOFALIASES
  # flatpak install io.github.zyedidia.micro io.podman_desktop.PodmanDesktop org.gnome.Epiphany nl.hjdskes.gcolor3 org.filezillaproject.Filezilla com.getpostman.Postman io.dbeaver.DBeaverCommunity net.waterfox.waterfox org.telegram.desktop org.gimp.GIMP org.inkscape.Inkscape com.sublimemerge.App com.sublimehq.SublimeText com.visualstudio.code org.mozilla.firefox com.google.Chrome app.zen_browser.zen com.mongodb.Compass org.onlyoffice.desktopeditors com.jetbrains.RustRover com.jetbrains.WebStorm com.jetbrains.GoLand
 
  # flatpak install io.podman_desktop.PodmanDesktop org.virt_manager.virt-manager org.gnome.Epiphany org.adishatz.Screenshot com.cloudchewie.cloudotp io.gitlab.adhami3310.Impression com.github.tchx84.Flatseal com.belmoussaoui.Authenticator com.yubico.yubioath org.kde.krdc org.gnome.Totem nl.hjdskes.gcolor3 app.drey.Warp org.kde.falkon com.jgraph.drawio.desktop org.openshot.OpenShot sh.ppy.osu org.raspberrypi.rpi-imager dev.zed.Zed io.github.shiftey.Desktop org.filezillaproject.Filezilla org.flameshot.Flameshot com.getpostman.Postman io.dbeaver.DBeaverCommunity net.waterfox.waterfox org.kde.haruna org.remmina.Remmina us.zoom.Zoom org.sigxcpu.Livi org.gnu.emacs org.kde.kate org.telegram.desktop org.kde.krita org.fedoraproject.MediaWriter org.kde.kdenlive org.ksnip.ksnip org.gimp.GIMP org.inkscape.Inkscape com.sublimemerge.App com.sublimehq.SublimeText com.visualstudio.code org.mozilla.firefox com.google.Chrome app.zen_browser.zen com.jetbrains.DataGrip com.mongodb.Compass org.onlyoffice.desktopeditors com.google.AndroidStudio com.jetbrains.IntelliJ-IDEA-Ultimate com.jetbrains.RustRover com.jetbrains.WebStorm com.jetbrains.GoLand
-

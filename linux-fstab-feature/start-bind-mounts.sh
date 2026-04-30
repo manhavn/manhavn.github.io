@@ -24,6 +24,7 @@ mounts=(
   "/desktop:$HOME_PATH/Desktop"
   "/feature/userdata/Android:$HOME_PATH/Android"
 
+  "/feature/userdata/dot.sdkman:$HOME_PATH/.sdkman"
   "/feature/userdata/dot.ssh:$HOME_PATH/.ssh"
   "/feature/userdata/dot.rustup:$HOME_PATH/.rustup"
   "/feature/userdata/dot.cargo:$HOME_PATH/.cargo"
@@ -38,8 +39,9 @@ mounts=(
 
   "/feature/userdata/dot.gemini:$HOME_PATH/.gemini"
   "/feature/userdata/dot.antigravity:$HOME_PATH/.antigravity"
-  "/feature/userdata/dot.local.share.keyrings:$HOME_PATH/.local/share/keyrings"
 )
+
+echo 'Config jdk: https://jdk.java.net/26/ OR use sdkman curl -s "https://get.sdkman.io" | bash'
 
 for m in "${mounts[@]}"; do
   src="${m%%:*}"
@@ -51,4 +53,3 @@ for m in "${mounts[@]}"; do
     sudo mount --bind "$src" "$dst"
   fi
 done
-
